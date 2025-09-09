@@ -13,7 +13,7 @@ function EditTask() {
     const fetchTask = async () => {
       try {
         console.log("Fetching task with id:", id);
-        const res = await axios.get(`http://localhost:5000/api/tasks/${id}`);
+        const res = await axios.get(`https://taskmanager-q9wf.onrender.com/api/tasks/${id}`);
         setTask(res.data);
         setLoading(false);
       } catch (error) {
@@ -35,7 +35,7 @@ function EditTask() {
     e.preventDefault();
     try {
       console.log("Updating task:", task);
-      await axios.put(`http://localhost:5000/api/tasks/${id}`, task);
+      await axios.put(`https://taskmanager-q9wf.onrender.com/api/tasks/${id}`, task);
       navigate("/"); // redirect back to home
     } catch (error) {
       console.error("Error updating task:", error);

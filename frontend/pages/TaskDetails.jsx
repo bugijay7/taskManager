@@ -12,7 +12,7 @@ function TaskDetails() {
     const fetchTask = async () => {
       try {
         console.log("Fetching task details for:", id);
-        const res = await axios.get(`http://localhost:5000/api/tasks/${id}`);
+        const res = await axios.get(`https://taskmanager-q9wf.onrender.com/api/tasks/${id}`);
         setTask(res.data);
         setLoading(false);
       } catch (error) {

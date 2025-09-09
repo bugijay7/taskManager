@@ -11,7 +11,7 @@ function Home() {
     const fetchTasks = async () => {
       console.log("Fetching tasks...");
       try {
-        const response = await axios.get('http://localhost:5000/api/tasks');
+        const response = await axios.get('https://taskmanager-q9wf.onrender.com/api/tasks');
         console.log("Tasks fetched:", response.data);
         setTasks(response.data);
       } catch (error) {
@@ -26,7 +26,7 @@ function Home() {
   const handleDelete = async (id) => {
     console.log("Deleting task with ID:", id);
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+      await axios.delete(`https://taskmanager-q9wf.onrender.com/api/tasks/${id}`);
       console.log("Task deleted successfully:", id);
       setTasks(tasks.filter((task) => task._id !== id));
     } catch (error) {
